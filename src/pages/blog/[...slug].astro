@@ -1,0 +1,10 @@
+---
+import { getCollection, render } from "astro:content";
+import Page from "../../layouts/Page.astro";
+export async function getStaticPaths() {
+  return (await getCollection("blog")).map(article => ({ params: { slug: article.id }, props: { article } }));
+}
+const { article } = Astro.props;
+const { Content } = await render(article);
+---
+<Page title={article.data.title} description={article.data.description}><article><h1>{article.data.title}</h1><time datetime={article.data.pubDate.toISOString()}>{article.data.pubDate.toISOString().slice(0, 10)}</time><Content/></article></Page>

@@ -1,0 +1,5 @@
+---
+const { title, description } = Astro.props;
+---
+<!doctype html><html lang="en"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta name="description" content={description}/><title>{title} | Cadence Journal</title></head><body><header><a href="/">Cadence Journal</a><p>Clear thinking for small teams.</p></header><main><slot/></main><footer>Publishing integration pilot. All company and article content is synthetic.</footer></body></html>
+<style is:global>body{max-width:760px;margin:48px auto;padding:0 24px;font:18px/1.65 system-ui;color:#142033;background:#fafafa}header,footer{padding:24px 0;border-bottom:1px solid #ddd}a{color:#2455bf}h1{font-size:2.5rem;line-height:1.15}img{max-width:100%;height:auto}footer{font-size:14px;color:#596171}article{margin:40px 0}</style>
